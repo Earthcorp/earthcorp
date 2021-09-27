@@ -78,7 +78,7 @@ const subscribe = async () => {
                             htmlFor="name"
                             className="inline-block mb-1 font-medium"
                             >
-                            Full Name
+                            Name
                             </label>
                             <input
                             placeholder="John Doe"
