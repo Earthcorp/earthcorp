@@ -1,4 +1,5 @@
 import axios from "axios"
+
 function Req(email) {
 // Creating API Key: mailchimp.com/developer/marketing/guides/quick-start/
 const API_KEY = process.env.MAILCHIMP_API_KEY

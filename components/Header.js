@@ -1,7 +1,18 @@
 import { useState } from 'react';
+import * as ga from '../lib/ga'
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [query, setQuery] = useState("");
+
+    const search = () => {
+        ga.event({
+          action: "search",
+          params : {
+            search_term: query
+          }
+        })
+      }
 
     return (
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -74,6 +85,16 @@ function Header() {
                 </li>
                 <li>
                     <a
+                    href="/contact"
+                    aria-label="Contact"
+                    title="Contact"
+                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    >
+                    Contact
+                    </a>
+                </li>
+                <li>
+                    <a
                     href="/"
                     className="inline-flex items-center justify-center h-12 font-medium tracking-wide text-gray-700 transition duration-200 hover:text-deep-purple-accent-400"
                     aria-label="Sign up"
@@ -126,6 +147,38 @@ function Header() {
                 </svg>
                     </a>
                 </li>
+                <li>
+                    <input
+                    onChange={(event) => setQuery(event.target.value)}
+                    placeholder="Search"
+                    required
+                    type="text"
+                    className="flex-grow w-full h-10 px-4 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none"
+                    id="search"
+                    name="search"
+                    />
+                    <button 
+                    type="submit" 
+                    className="absolute right-0 top-0 mt-3 mr-2"
+                    onClick={() => search()}
+                    >
+                        <svg
+                            fill="none"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            className="w-4 h-6"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            >
+                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                </li>
+                
                 </ul>
                 <div className="lg:hidden">
                 <button
@@ -236,6 +289,16 @@ function Header() {
                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
                                 About us
+                            </a>
+                            </li>
+                            <li>
+                            <a
+                                href="/contact"
+                                aria-label="Contact"
+                                title="Contact"
+                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                                Contact
                             </a>
                             </li>
                             <li>

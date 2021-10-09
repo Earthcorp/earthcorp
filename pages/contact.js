@@ -15,7 +15,7 @@ function Contact() {
     }
 
     return (
-        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-sm md:px-24 lg:px-8">
         <div className="relative bg-white rounded shadow-2xl p-7 sm:p-10">
             <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
             Contact Form
@@ -76,7 +76,7 @@ function Contact() {
                 <textarea
                 placeholder="type your message"
                 required
-                className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none"
+                className="flex-grow w-full h-24 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none"
                 name="message"
                 />
             </div>
